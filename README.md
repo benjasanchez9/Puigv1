@@ -22,9 +22,12 @@ puig-asociados/
     ├── css/styles.css              Todos los estilos
     ├── js/main.js                  Menú, acordeones, formulario, animaciones
     └── img/
-        ├── logo-puig.png           Logo completo (símbolo + texto) — footer
-        ├── logo-puig-simbolo.png   Solo el símbolo — header
-        ├── logo-puig-marca.png     Solo el texto — header
+        ├── logo-puig.svg                    Logo vertical (vectorial) — hero
+        ├── logo-puig-horizontal.svg         Lockup horizontal — barra superior
+        ├── logo-puig-blanco.svg             Versión en blanco — pie de página
+        ├── logo-puig-horizontal-blanco.svg  Lockup horizontal en blanco (de reserva)
+        ├── icon.svg                         Ícono circular — favicon
+        └── marca/                           Pack original del diseñador (SVG + PNG)
         ├── hero-puig-1920.webp     Foto del hero (pantallas grandes)
         ├── hero-puig-1280.webp     Foto del hero (pantallas medianas)
         ├── hero-puig-768.webp      Foto del hero (celulares)
@@ -52,16 +55,16 @@ Buscá el comentario de la sección y modificá el texto que está entre las eti
 
 ## 3. Colores
 
-El verde institucional se tomó del logo original: **`#389870`**.
+El verde institucional es el oficial del manual de marca: **`#2DA172`**.
 
 Todos los colores están definidos en un solo lugar, al principio de `assets/css/styles.css`:
 
 ```css
 :root {
-  --brand-green:      #389870;  /* verde del logo: acentos, líneas, íconos */
-  --brand-green-dark: #1F6E51;  /* botones y textos verdes (mejor contraste) */
-  --brand-green-deep: #0E3B2C;  /* fondo de Mi Unidad y del pie de página */
-  --brand-green-soft: #EAF3EE;  /* fondo suave de la franja de valores */
+  --brand-green:      #2DA172;  /* verde oficial: acentos, líneas, íconos */
+  --brand-green-dark: #1C7352;  /* botones y textos verdes (contraste AA) */
+  --brand-green-deep: #0C3E2C;  /* fondo de Mi Unidad y del pie de página */
+  --brand-green-soft: #E8F5EE;  /* fondo suave de la franja de valores */
   ...
 }
 ```
@@ -74,11 +77,16 @@ Cambiando ese valor cambia el sitio entero. No hay verdes escritos "a mano" en o
 
 Sustituí los archivos manteniendo **el mismo nombre**:
 
-- `assets/img/logo-puig.png` → logo completo (usado en el pie de página)
-- `assets/img/logo-puig-simbolo.png` → solo los edificios (usado en el header)
-- `assets/img/logo-puig-marca.png` → solo el texto "PUIG & ASOC." (usado en el header)
+- `assets/img/logo-puig.svg` → versión vertical (usada dentro del hero)
+- `assets/img/logo-puig-horizontal.svg` → lockup horizontal (usado en la barra superior)
+- `assets/img/logo-puig-blanco.svg` → versión en blanco (usada en el pie, sobre verde oscuro)
+- `assets/img/icon.svg` → ícono circular del favicon
 
-Los dos últimos son recortes del logo original: no se redibujó ni se modificó nada, solo se separaron los elementos para que el texto quede legible en la barra superior. El CSS solo define la **altura**; el ancho se calcula solo, así que el logo nunca se deforma.
+Todas son **vectoriales (SVG)**, generadas a partir del pack oficial del diseñador: se ven nítidas en cualquier pantalla y a cualquier tamaño. Los archivos originales del pack quedaron guardados en `assets/img/marca/` por si se necesitan.
+
+El CSS solo define la **altura**; el ancho se calcula solo, así que el logo nunca se deforma.
+
+Si se cambia el favicon, además del `icon.svg` hay que regenerar `favicon.ico`, `apple-touch-icon.png` e `icon-512.png` (son la misma imagen en formatos que exigen los navegadores viejos y los celulares).
 
 ---
 
@@ -100,6 +108,8 @@ Si la foto nueva tiene otra composición y los edificios quedan mal encuadrados,
 ```
 
 El primer número mueve el encuadre horizontalmente (0% = izquierda, 100% = derecha).
+
+**Nota sobre el logo en la barra superior:** al inicio de la página la barra muestra solo el menú, porque el logo grande ya está dentro del hero (como en la referencia del cliente). Al hacer scroll, el logo aparece en la barra. Si se prefiere que esté visible siempre, en `styles.css` buscá `.site-header.is-scrolled .brand` y borrá el bloque `@media` que lo antecede.
 
 ---
 
@@ -218,13 +228,15 @@ Si se activa la redirección antes de tener el certificado instalado, el sitio q
 | **Dirección física y horarios** | No se incluyeron porque no fueron provistos. Si se agregan, conviene sumarlos también al bloque de datos estructurados (JSON-LD) al final del `<head>`. |
 | **Instagram** | Verificar que la URL `instagram.com/puigyasociados` sea la correcta. |
 
+> El verde `#2DA172` se usa para acentos, íconos y líneas. Para botones y texto sobre blanco se usa `#1C7352`, una versión más oscura del mismo verde: el oficial no alcanza el contraste mínimo de accesibilidad (3,25:1 contra el 4,5:1 requerido) cuando lleva texto blanco encima.
+
 No se inventó ningún dato: no hay testimonios, cantidad de edificios, métricas, premios ni clientes ficticios.
 
 ---
 
 ## 12. Tipografías
 
-El sitio usa **Archivo** (títulos) e **Inter** (texto), cargadas desde Google Fonts. Si en algún momento se prefiere no depender de un servicio externo, se puede borrar el `<link>` de Google Fonts del `<head>`: el sitio seguirá funcionando con las tipografías del sistema, sin romperse.
+El sitio usa **Montserrat** (títulos) y **Lato** (texto), cargadas desde Google Fonts. Se eligieron por ser las más cercanas a la captura de referencia del cliente. Si en algún momento se prefiere no depender de un servicio externo, se puede borrar el `<link>` de Google Fonts del `<head>`: el sitio seguirá funcionando con las tipografías del sistema, sin romperse.
 
 ---
 

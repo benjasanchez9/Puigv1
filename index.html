@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Puig &amp; Asociados | Administración de Propiedades en Montevideo</title>
 <meta name="description" content="Puig &amp; Asociados brinda administración profesional y personalizada de edificios y propiedades en Montevideo. Gestión, transparencia, cercanía y compromiso.">
-<meta name="theme-color" content="#389870">
+<meta name="theme-color" content="#2DA172">
 <link rel="canonical" href="https://www.puigyasociados.com/">
 
 <!-- Open Graph -->
@@ -25,12 +25,13 @@
 
 <!-- Iconos -->
 <link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
 <!-- Tipografía -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 
 <link rel="preload" as="image" href="assets/img/hero-puig-1920.webp" imagesrcset="assets/img/hero-puig-768.webp 768w, assets/img/hero-puig-1280.webp 1280w, assets/img/hero-puig-1920.webp 1920w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/css/styles.css">
@@ -44,7 +45,7 @@
   "alternateName": "Puig & Asoc. — Administración de Propiedades",
   "description": "Administración profesional y personalizada de edificios y copropiedades en Montevideo, Uruguay.",
   "url": "https://www.puigyasociados.com/",
-  "logo": "https://www.puigyasociados.com/assets/img/logo-puig.png",
+  "logo": "https://www.puigyasociados.com/assets/img/logo-puig.svg",
   "image": "https://www.puigyasociados.com/assets/img/og-puig.jpg",
   "foundingDate": "2019",
   "email": "administracion@puigyasociados.com",
@@ -74,8 +75,7 @@
   <div class="container header-inner">
 
     <a class="brand" href="#inicio" aria-label="Puig &amp; Asociados — Inicio">
-      <img class="brand-symbol" src="assets/img/logo-puig-simbolo.png" alt="" width="314" height="234" aria-hidden="true">
-      <img class="brand-word" src="assets/img/logo-puig-marca.png" alt="Puig &amp; Asoc. Administración de Propiedades" width="269" height="86">
+      <img class="brand-logo" src="assets/img/logo-puig-horizontal.svg" alt="Puig &amp; Asoc. — Administración de Propiedades" width="822" height="200">
     </a>
 
     <nav class="nav-desktop" aria-label="Navegación principal">
@@ -123,17 +123,27 @@
       <img src="assets/img/hero-puig-1920.jpg" width="1916" height="821" alt="Vista de la rambla de Montevideo con edificios frente al agua al atardecer" fetchpriority="high" decoding="async">
     </picture>
     <span class="hero-veil" aria-hidden="true"></span>
-    <span class="hero-diagonals" aria-hidden="true"></span>
+
+    <svg class="hero-diagonals" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <polygon points="0,0 700,0 250,110 0,62" fill="var(--brand-green-deep)"></polygon>
+      <polygon points="0,58 250,110 90,110 0,84" fill="var(--color-border)" opacity=".85"></polygon>
+      <polygon points="850,0 1440,0 1440,92" fill="var(--brand-green)"></polygon>
+      <polygon points="1165,0 1440,0 1440,40" fill="var(--brand-green-dark)" opacity=".92"></polygon>
+    </svg>
   </div>
 
-  <div class="container hero-inner">
+  <div class="hero-inner">
     <div class="hero-body">
+      <img class="hero-logo" src="assets/img/logo-puig.svg" width="840" height="893" alt="Puig &amp; Asociados — Administración de Propiedades" fetchpriority="high">
+
       <h1 class="hero-title">
-        <span class="hero-title-sm">Puig &amp; Asociados</span>
-        <span class="hero-title-lg">Administramos<br><em>confianza</em></span>
+        <span class="hero-title-sm">Administramos</span>
+        <span class="hero-title-lg">Confianza</span>
       </h1>
+
       <p class="hero-text">Experiencia, cercanía y compromiso para una administración eficiente y transparente.</p>
       <p class="hero-claim">Confianza y tranquilidad a través de nuestra experiencia.</p>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="#servicios">Conocé nuestros servicios<span class="arrow" aria-hidden="true"></span></a>
         <a class="btn btn-outline" href="https://app.designware.uy/MiUnidad/login.aspx" target="_blank" rel="noopener noreferrer">Acceso a Mi Unidad</a>
@@ -503,7 +513,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="assets/img/logo-puig.png" width="314" height="339" alt="Puig &amp; Asociados" loading="lazy" class="footer-logo">
+      <img src="assets/img/logo-puig-blanco.svg" width="840" height="893" alt="Puig &amp; Asociados" loading="lazy" class="footer-logo">
       <p class="footer-tag">Administración de Propiedades<br>Montevideo, Uruguay</p>
     </div>
 
