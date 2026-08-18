@@ -690,50 +690,98 @@ body.menu-open { overflow: hidden; }
 .propuesta-alt { font-size: .95rem; color: var(--color-muted); }
 
 /* Contacto */
-.contacto-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.contacto-grid > * { min-width: 0; }
-.contact-btn > span:last-child { min-width: 0; }
-.contacto-brand {
-  font-family: var(--font-display);
-  font-size: 1.2rem; font-weight: 700;
-  margin: 1.5rem 0 0;
+.contacto-head {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
 }
-.contacto-sub { color: var(--color-muted); margin-bottom: 1.5rem; }
-.contacto-list li {
-  display: flex; flex-direction: column; gap: .1rem;
-  padding: .85rem 0;
-  border-top: 1px solid var(--color-border);
+.contacto-head .section-title { margin-bottom: 0; max-width: 16ch; }
+.contacto-lead {
+  margin: 0;
+  color: #35403C;
+  max-width: 46ch;
+  padding-top: .35rem;
 }
-.contacto-list li:last-child { border-bottom: 1px solid var(--color-border); }
-.contacto-label {
-  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--color-muted);
-}
-.contacto-list a { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; overflow-wrap: anywhere; }
 
-.contacto-actions { display: grid; gap: .85rem; }
+.contacto-canales {
+  display: grid;
+  grid-template-columns: 1fr 1.32fr 1fr;  /* el email necesita más ancho */
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
 .contact-btn {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.1rem 1.25rem;
-  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: clamp(.75rem, 1.2vw, 1rem);
+  height: 100%;
+  padding: 1.35rem clamp(1rem, 1.4vw, 1.4rem);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   background: #fff;
   color: var(--color-text);
   transition: border-color var(--t), box-shadow var(--t), transform var(--t-fast);
 }
-.contact-btn:hover { border-color: var(--brand-green); box-shadow: var(--shadow-md); transform: translateY(-2px); color: var(--color-text); }
+.contact-btn:hover,
+.contact-btn:focus-visible {
+  border-color: var(--brand-green);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  color: var(--color-text);
+}
 .contact-btn-icon {
   flex: 0 0 auto;
   display: inline-flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   background: var(--brand-green-soft);
   color: var(--brand-green-dark);
 }
-.contact-btn-icon svg { width: 22px; height: 22px; }
-.contact-btn strong { display: block; font-family: var(--font-display); font-size: 1rem; }
-.contact-btn small { display: block; color: var(--color-muted); font-size: .87rem; overflow-wrap: anywhere; }
+.contact-btn-icon svg { width: 23px; height: 23px; }
+.contact-btn-text { min-width: 0; }
+.contact-btn-text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  margin-bottom: .1rem;
+}
+.contact-btn-dato {
+  display: block;
+  font-size: clamp(.8rem, .68rem + .28vw, .9rem);
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
+}
+
+.contacto-pie {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .75rem 2rem;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2rem);
+  border-top: 1px solid var(--color-border);
+}
+.contacto-brand {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brand-green-deep);
+}
+.contacto-brand span {
+  font-weight: 400;
+  font-size: .95rem;
+  color: var(--color-muted);
+  margin-left: .6rem;
+}
+.contacto-web { margin: 0; }
+.contacto-web a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .98rem;
+}
 
 /* ---------- 7. FORMULARIO ---------- */
 .form-card {
@@ -903,7 +951,8 @@ body.menu-open { overflow: hidden; }
   .about-aside .eyebrow { width: 100%; }
   .big-year { margin-bottom: 0; }
 
-  .diff-head, .cerca-grid, .propuesta-grid, .contacto-grid, .unidad-grid { grid-template-columns: 1fr; }
+  .diff-head, .cerca-grid, .propuesta-grid, .contacto-head, .unidad-grid { grid-template-columns: 1fr; }
+  .contacto-canales { grid-template-columns: 1fr; }
 
   /* Proceso en tablet: dos filas de columnas amplias */
   .process { grid-template-columns: repeat(3, 1fr); }
@@ -941,6 +990,11 @@ body.menu-open { overflow: hidden; }
   .value-text { grid-column: 2; }
 
   .services-grid { grid-template-columns: 1fr; }
+
+  /* Contacto en mobile: marca y web apiladas */
+  .contacto-pie { display: block; }
+  .contacto-brand span { display: block; margin-left: 0; margin-top: .2rem; }
+  .contacto-web { margin-top: .75rem; }
 
   /* Proceso en mobile: lista vertical con línea guía */
   .process { grid-template-columns: 1fr; border-top: 0; }
