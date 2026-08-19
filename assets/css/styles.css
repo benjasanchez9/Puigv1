@@ -646,6 +646,60 @@ body.menu-open { overflow: hidden; }
   width: 6px; height: 1px; background: var(--brand-green);
 }
 
+/* Edificios */
+.edificios-head {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  margin-bottom: clamp(2.5rem, 5vw, 3.75rem);
+}
+.edificios-head .section-title { margin-bottom: 0; max-width: 18ch; }
+.edificios-lead {
+  margin: 0;
+  padding-top: .35rem;
+  color: #35403C;
+  max-width: 48ch;
+}
+
+.edificios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 clamp(1.5rem, 3vw, 3rem);
+  border-top: 1px solid var(--brand-green-line);
+}
+.edificio {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  padding: 1.15rem 0 1.15rem 1.6rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.edificio::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.55rem;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--brand-green);
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+.edificio-nombre {
+  font-family: var(--font-display);
+  font-size: clamp(.98rem, .92rem + .25vw, 1.08rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--brand-green-deep);
+}
+.edificio-barrio {
+  font-size: .85rem;
+  letter-spacing: .04em;
+  color: var(--color-muted);
+}
+
 /* Mi Unidad */
 .unidad { background: var(--brand-green-deep); color: #E7F2EC; }
 .unidad .section-title { color: #fff; max-width: 22ch; font-size: clamp(1.8rem, 1.1rem + 2.6vw, 2.9rem); }
@@ -951,7 +1005,8 @@ body.menu-open { overflow: hidden; }
   .about-aside .eyebrow { width: 100%; }
   .big-year { margin-bottom: 0; }
 
-  .diff-head, .cerca-grid, .propuesta-grid, .contacto-head, .unidad-grid { grid-template-columns: 1fr; }
+  .diff-head, .cerca-grid, .propuesta-grid, .contacto-head, .unidad-grid, .edificios-head { grid-template-columns: 1fr; }
+  .edificios-grid { grid-template-columns: repeat(2, 1fr); }
   .contacto-canales { grid-template-columns: 1fr; }
 
   /* Proceso en tablet: dos filas de columnas amplias */
@@ -990,6 +1045,7 @@ body.menu-open { overflow: hidden; }
   .value-text { grid-column: 2; }
 
   .services-grid { grid-template-columns: 1fr; }
+  .edificios-grid { grid-template-columns: 1fr; }
 
   /* Contacto en mobile: marca y web apiladas */
   .contacto-pie { display: block; }

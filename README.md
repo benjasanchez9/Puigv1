@@ -123,9 +123,32 @@ https://app.designware.uy/MiUnidad/login.aspx
 
 Si esa dirección cambia, buscá `app.designware.uy` en `index.html` y reemplazá **todas** las apariciones.
 
-> Nota: el ítem **MI UNIDAD** del menú abre directamente la plataforma en una pestaña nueva, tal como fue solicitado. Si en algún momento se prefiere que ese ítem lleve a la sección informativa del sitio, hay que cambiar su `href` por `#mi-unidad` (y quitar `target="_blank" rel="noopener noreferrer"`).
+> Nota: el menú superior ya no lleva un ítem "Mi Unidad" (fue reemplazado por **Edificios**). El acceso a la plataforma sigue disponible en cinco lugares: el botón verde del header, el botón del hero, el menú mobile, la sección "Tecnología al servicio de la copropiedad" y el pie de página.
 
 El sitio **no** tiene login, usuarios ni base de datos propia: todo eso vive en Mi Unidad.
+
+---
+
+## 6 bis. Editar la lista de edificios
+
+La sección **Edificios** está en `index.html`, bajo el comentario:
+
+```html
+<!-- ============ EDIFICIOS ============ -->
+```
+
+Cada edificio es un bloque de tres líneas. Para agregar uno nuevo, copiá un bloque completo y cambiá el nombre y el barrio:
+
+```html
+<li class="edificio reveal">
+  <span class="edificio-nombre">Edificio Ejemplo</span>
+  <span class="edificio-barrio">Pocitos</span>
+</li>
+```
+
+Para quitar un edificio, borrá su bloque completo (las cuatro líneas, desde `<li` hasta `</li>`).
+
+La grilla se reacomoda sola: no importa si son 9, 12 o 20, siempre se distribuyen en tres columnas en computadora, dos en tablet y una en celular.
 
 ---
 
