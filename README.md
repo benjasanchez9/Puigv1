@@ -109,8 +109,6 @@ Si la foto nueva tiene otra composición y los edificios quedan mal encuadrados,
 
 El primer número mueve el encuadre horizontalmente (0% = izquierda, 100% = derecha).
 
-**Nota sobre el logo en la barra superior:** al inicio de la página la barra muestra solo el menú, porque el logo grande ya está dentro del hero (como en la referencia del cliente). Al hacer scroll, el logo aparece en la barra. Si se prefiere que esté visible siempre, en `styles.css` buscá `.site-header.is-scrolled .brand` y borrá el bloque `@media` que lo antecede.
-
 ---
 
 ## 6. Mi Unidad
