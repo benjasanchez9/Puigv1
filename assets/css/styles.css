@@ -986,10 +986,6 @@ body.menu-open { overflow: hidden; }
   :root { --header-h: 76px; }
 
   .nav-desktop, .btn-header { display: none; }
-  /* el logo ya está en la barra superior: no se repite en el hero */
-  .hero-logo { display: none; }
-  .hero-media img { height: clamp(300px, 42vw, 400px); }
-  .hero-body { padding-top: clamp(1.5rem, 4vw, 2.25rem); }
   .menu-toggle { display: inline-flex; }
   .brand-logo { height: 38px; }
 
@@ -1025,9 +1021,7 @@ body.menu-open { overflow: hidden; }
 
 /* Mobile */
 @media (max-width: 640px) {
-  .hero-media img { height: clamp(230px, 50vw, 310px); object-position: 76% 62%; }
   .hero-actions .btn { width: 100%; }
-  .hero-logo { height: clamp(76px, 21vw, 104px); }
   .hero-title-sm { font-size: .88rem; letter-spacing: .22em; }
   .hero-title-lg { font-size: clamp(2.15rem, 11vw, 3.1rem); }
 
@@ -1095,3 +1089,58 @@ body.menu-open { overflow: hidden; }
 html:not(.js) .service-detail { display: block; }
 html:not(.js) .service-toggle { display: none; }
 html:not(.js) .mobile-menu { display: none; }
+
+
+/* =========================================================
+   HERO EN PANTALLAS CHICAS
+   Misma composición que en desktop, adaptada al formato
+   vertical: la foto es el fondo y todo el contenido va encima.
+   ========================================================= */
+@media (max-width: 1024px) {
+  .hero { display: grid; }
+
+  .hero-media { grid-area: 1 / 1; height: 100%; }
+  .hero-media img {
+    height: 100%;
+    min-height: clamp(540px, 122vw, 760px);
+    object-position: 70% 58%;
+  }
+
+  /* Velo vertical: despeja la zona de lectura y deja la
+     arquitectura visible hacia abajo y a la derecha. */
+  .hero-veil {
+    background:
+      linear-gradient(180deg,
+        rgba(255,255,255,.94) 0%,
+        rgba(255,255,255,.88) 38%,
+        rgba(255,255,255,.55) 62%,
+        rgba(255,255,255,.12) 82%,
+        rgba(255,255,255,0) 100%),
+      linear-gradient(100deg,
+        rgba(255,255,255,.60) 0%,
+        rgba(255,255,255,.18) 52%,
+        rgba(255,255,255,0) 78%);
+  }
+
+  .hero-inner { grid-area: 1 / 1; display: flex; align-items: center; z-index: 2; }
+  .hero-body {
+    padding-block: clamp(3.25rem, 13vw, 5rem) clamp(2rem, 7vw, 3rem);
+    max-width: 34rem;
+  }
+
+  .hero-logo {
+    display: block;
+    height: clamp(78px, 20vw, 118px);
+    margin-bottom: clamp(.85rem, 3vw, 1.25rem);
+  }
+
+  .hero-text { margin-bottom: .7rem; }
+  .hero-claim { margin-bottom: 1.35rem; }
+}
+
+@media (max-width: 640px) {
+  /* encuadre con el agua a la izquierda y la arquitectura a la derecha */
+  .hero-media img { object-position: 58% 56%; }
+  .hero-body { max-width: none; }
+  .hero-text, .hero-claim { max-width: 30ch; }
+}
