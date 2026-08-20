@@ -732,7 +732,7 @@ body.menu-open { overflow: hidden; }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  object-position: 80% 60%;
+  object-position: 50% 50%;
 }
 .cerca-copy p { max-width: 52ch; color: #35403C; }
 
@@ -759,12 +759,12 @@ body.menu-open { overflow: hidden; }
 
 .contacto-canales {
   display: grid;
-  grid-template-columns: 1fr 1.32fr 1fr;  /* el email necesita más ancho */
+  grid-template-columns: repeat(2, 1fr);  /* cuatro canales en dos filas */
   gap: clamp(1rem, 2vw, 1.5rem);
 }
 .contact-btn {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: clamp(.75rem, 1.2vw, 1rem);
   height: 100%;
   padding: 1.35rem clamp(1rem, 1.4vw, 1.4rem);
@@ -803,6 +803,13 @@ body.menu-open { overflow: hidden; }
   font-size: clamp(.8rem, .68rem + .28vw, .9rem);
   color: var(--color-muted);
   overflow-wrap: anywhere;
+}
+.contact-btn-nota {
+  display: block;
+  margin-top: .3rem;
+  font-size: .8rem;
+  line-height: 1.45;
+  color: var(--color-muted);
 }
 
 .contacto-pie {
@@ -962,6 +969,11 @@ body.menu-open { overflow: hidden; }
   }
   .hero-inner { grid-area: 1 / 1; display: flex; align-items: center; z-index: 2; }
   .hero-body { padding-block: clamp(4.5rem, 9vw, 8rem) clamp(2rem, 4vw, 3.5rem); }
+
+  /* Ajuste de equilibrio: el logo gana presencia y el titular la cede */
+  .hero-logo { height: clamp(100px, 12.4vw, 172px); }
+  .hero-title-sm { font-size: clamp(.95rem, .78rem + .82vw, 1.38rem); }
+  .hero-title-lg { font-size: clamp(2.4rem, 1rem + 4.75vw, 4.55rem); }
 }
 
 /* Desktop intermedio: barra algo más compacta */

@@ -32,6 +32,9 @@ puig-asociados/
         ├── hero-puig-1280.webp     Foto del hero (pantallas medianas)
         ├── hero-puig-768.webp      Foto del hero (celulares)
         ├── hero-puig-1920.jpg      Respaldo por si el navegador no soporta WebP
+        ├── cerca-puig-1280.webp    Foto de "Estamos para acompañarte"
+        ├── cerca-puig-768.webp     La misma, para celulares
+        ├── cerca-puig-1280.jpg     Respaldo de la anterior
         ├── og-puig.jpg             Imagen que se ve al compartir el link
         ├── apple-touch-icon.png    Ícono para iPhone/iPad
         └── icon-512.png            Ícono grande de reserva
