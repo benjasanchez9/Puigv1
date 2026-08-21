@@ -348,9 +348,9 @@ body.menu-open { overflow: hidden; }
 .hero-title-sm {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(1rem, .8rem + .9vw, 1.5rem);
+  font-size: clamp(.9rem, .74rem + .72vw, 1.3rem);
   font-weight: 500;
-  letter-spacing: .3em;
+  letter-spacing: .26em;
   line-height: 1.1;
   text-transform: uppercase;
   color: #2C3835;
@@ -360,9 +360,9 @@ body.menu-open { overflow: hidden; }
 .hero-title-lg {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.6rem, 1.1rem + 5.2vw, 5rem);
+  font-size: clamp(2rem, .95rem + 3.4vw, 4.4rem);
   font-weight: 800;
-  letter-spacing: -.005em;
+  letter-spacing: -.015em;
   line-height: 1;
   text-transform: uppercase;
   color: var(--brand-green-dark);
@@ -972,8 +972,8 @@ body.menu-open { overflow: hidden; }
 
   /* Ajuste de equilibrio: el logo gana presencia y el titular la cede */
   .hero-logo { height: clamp(100px, 12.4vw, 172px); }
-  .hero-title-sm { font-size: clamp(.95rem, .78rem + .82vw, 1.38rem); }
-  .hero-title-lg { font-size: clamp(2.4rem, 1rem + 4.75vw, 4.55rem); }
+  .hero-title-sm { font-size: clamp(.9rem, .74rem + .74vw, 1.25rem); }
+  .hero-title-lg { font-size: clamp(2rem, .8rem + 3.6vw, 3.65rem); }
 }
 
 /* Desktop intermedio: barra algo más compacta */
@@ -1034,8 +1034,8 @@ body.menu-open { overflow: hidden; }
 /* Mobile */
 @media (max-width: 640px) {
   .hero-actions .btn { width: 100%; }
-  .hero-title-sm { font-size: .88rem; letter-spacing: .22em; }
-  .hero-title-lg { font-size: clamp(2.15rem, 11vw, 3.1rem); }
+  .hero-title-sm { font-size: .82rem; letter-spacing: .2em; }
+  .hero-title-lg { font-size: clamp(1.72rem, 8.3vw, 2.5rem); }
 
   .values-grid { grid-template-columns: 1fr; row-gap: 0; }
   .values-grid .value {
